@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Number Game</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">""</string>
+    <string name="second_fragment_label">""</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="validatePlayer1">Valider</string>
+    <string name="validatePlayer2">Valider</string>
+
+
+    <string name="lorem_ipsum">
+        text lorem
+    </string>
+</resources>
