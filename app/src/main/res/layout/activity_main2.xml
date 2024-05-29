@@ -78,6 +78,8 @@
         android:layout_height="wrap_content"
         android:hint="Entrez un nombre"
         android:padding="16dp"
+        android:inputType="number"
+        android:imeOptions="actionDone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public String pseudo1;
     public String pseudo2;
 
-private ActivityMainBinding binding;
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
