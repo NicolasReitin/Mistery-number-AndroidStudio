@@ -38,18 +38,22 @@ private FragmentFirstBinding binding;
         TextInputEditText pseudoFirstPlayerLayout = binding.inputFirstPlayer;
 
         binding.buttonFirstPlayer.setOnClickListener(v -> {
+            // recupere le pseudo de l'input
             String pseudoFirstPlayer = pseudoFirstPlayerLayout.getText().toString();
             Log.i("pseudo", "Pseudo Player 1: " + pseudoFirstPlayer);
+            // recupere dans la page mainActivity les infos de MainActivity (variable pseudo)
             MainActivity mainActivity = (MainActivity) getActivity();
+            // donne la valeur de l'input au pseudo 1 de MainActivity
             mainActivity.pseudo1 = pseudoFirstPlayer;
 
+            /*
             TextView pseudo1 = mainActivity.findViewById(R.id.response_pseudo_1);
             TextView titrePseudo1 = mainActivity.findViewById(R.id.pseudo_player_1);
             pseudo1.setText(pseudoFirstPlayer);
+            */
 
+            // on verifie que le champ input est bien rempli et on accede au fragment 2 du 2eme joueur
             if(!pseudoFirstPlayer.isEmpty()) {
-                //pseudo1.setVisibility(View.VISIBLE); //repasse le texte en visible
-                //titrePseudo1.setVisibility(View.VISIBLE); //repasse le texte en visible
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
