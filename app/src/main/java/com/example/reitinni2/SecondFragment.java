@@ -57,7 +57,7 @@ private FragmentSecondBinding binding;
             // verifie que l'input soit bien rempli
             if(!pseudoSecondPlayer.isEmpty()) {
                 // creer une intention pour l'envoyer sur MainActivity2
-                Intent intent = new Intent(requireActivity(), MainActivity2.class);
+                Intent intent = new Intent(mainActivity, MainActivity2.class);
                 // je selectionne les infos a envoyer
                 intent.putExtra("PSEUDO_1", mainActivity.pseudo1);
                 intent.putExtra("PSEUDO_2", mainActivity.pseudo2);

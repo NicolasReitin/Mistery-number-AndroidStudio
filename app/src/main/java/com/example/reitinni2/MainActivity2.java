@@ -36,8 +36,12 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) { //fonction create de base
         super.onCreate(savedInstanceState);
+
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main2); //
+
+        binding = ActivityMain2Binding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -46,12 +50,10 @@ public class MainActivity2 extends AppCompatActivity {
 
         // recupere les elements via leurs id et stocke dans une variable
         TextView responsePseudo1 = binding.responsePseudo1;
-
-
-        TextView responsePseudo2 = findViewById(R.id.response_pseudo_2);
-        TextView currentTurn = findViewById(R.id.current_turn);
-        EditText inputNumber = findViewById(R.id.input_number);
-        Button submitButton = findViewById(R.id.submit_button);
+        TextView responsePseudo2 = binding.responsePseudo2;
+        TextView currentTurn = binding.currentTurn;
+        EditText inputNumber = binding.inputNumber;
+        Button submitButton = binding.submitButton;
 
         // recupere les intentions envoyés par le MainActivity precedent
         Intent intent = getIntent();
@@ -68,8 +70,6 @@ public class MainActivity2 extends AppCompatActivity {
         // genere un nombre aleatoire de 0 à 1000 qui est le nombre qui sera a trouver par les joueurs
         Random random = new Random();
         mysteryNumber = random.nextInt(1000);
-
-        //---------------------
 
         // on ajoute un random pour savoir qui va jouer en 1er : joueur 1 ou 2
         Integer CurrentplayerStart = random.nextInt(2) + 1; // choix du nombre entre 1 et 2
@@ -121,8 +121,6 @@ public class MainActivity2 extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 
     // fonction pour verifier si le nombre propose est bon, plus grand ou plus petit
